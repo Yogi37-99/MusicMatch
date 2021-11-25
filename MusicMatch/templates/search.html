@@ -1,0 +1,270 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang = "en"  class = "bg center">
+<head>
+  <!-- Required meta tags -->
+        <link rel="icon" href="https://img.icons8.com/officel/80/000000/musical.png" type="image/png" >
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Music Match Home</title>
+  <link rel="stylesheet" href="chrome-search://local-ntp/animations.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/local-ntp-common.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/customize.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/doodles.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/local-ntp.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/theme.css"></link>
+  <link rel="stylesheet" href="chrome-search://local-ntp/voice.css"></link>
+  <link rel="preload" href="https://lh5.googleusercontent.com/proxy/xvtq6_782kBajCBr0GISHpujOb51XLKUeEOJ2lLPKh12-xNBTCtsoHT14NQcaH9l4JhatcXEMBkqgUeCWhb3XhdLnD1BiNzQ_LVydwg=w3840-h2160-p-k-no-nd-mv" as="image">
+  <meta http-equiv="Content-Security-Policy"
+      content="object-src 'none';child-src chrome-search://most-visited/ https://*.google.com/ ;script-src 'strict-dynamic' 'sha256-1+GSDjMMklBjZY0QiWq+tGupCvajw4Xbn46ect2mZgM=' 'sha256-tCDoudW5/J/Alj3FMpQD7Hhf4u9RrSmCJLKqQnUos6g=' 'sha256-HqdPsO6hNmT/mfSeGdcX3eEGrZVva7AKD2Z2+1ujCZ8=' 'sha256-BcnvQDggot04zBRxv6gAGtlSZSQqR8mWXAE88yjPUkY=' 'sha256-IEF9PjeyU0vsr61C8cm3JQOerOYWdBsaGddCSPp6tZs=' 'sha256-RIDhH5uF+ciLoS6AP6ZkoxuwQyczkrTetThxXwVwFJI=' 'sha256-YCAfXiovRopSzmo+6cVNgtFuHfpoUW1p8bJnHAteZnQ=';">
+  <script src="chrome-search://local-ntp/animations.js"
+      integrity="sha256-1+GSDjMMklBjZY0QiWq+tGupCvajw4Xbn46ect2mZgM="></script>
+  <script src="chrome-search://local-ntp/config.js"
+      integrity="sha256-YCAfXiovRopSzmo+6cVNgtFuHfpoUW1p8bJnHAteZnQ="></script>
+  <script src="chrome-search://local-ntp/customize.js"
+      integrity="sha256-tCDoudW5/J/Alj3FMpQD7Hhf4u9RrSmCJLKqQnUos6g="></script>
+  <script src="chrome-search://local-ntp/doodles.js"
+      integrity="sha256-HqdPsO6hNmT/mfSeGdcX3eEGrZVva7AKD2Z2+1ujCZ8="></script>
+  <script src="chrome-search://local-ntp/local-ntp.js"
+      integrity="sha256-BcnvQDggot04zBRxv6gAGtlSZSQqR8mWXAE88yjPUkY="></script>
+  <script src="chrome-search://local-ntp/utils.js"
+      integrity="sha256-IEF9PjeyU0vsr61C8cm3JQOerOYWdBsaGddCSPp6tZs="></script>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  <meta name="referrer" content="strict-origin">
+</head>
+<style>
+  @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+  .bg{
+            /* The image used */
+            background-image: url("{% static 'back1.jpg' %}");
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+  .center{
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+           }
+  body.hide-fakebox #fakebox {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#fakebox-container {
+  margin: 0 auto 0 auto;
+  /* Increase min-width again to account for the search icon: 390px new
+   * min-width + additional 20px */
+  min-width: 410px;
+  width: var(--content-width);
+}
+
+#fakebox {
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+  box-sizing: border-box;
+  cursor: text;
+  font-size: 16px;
+  height: 44px;
+  margin: 0 auto;
+  max-width: 584px;
+  opacity: 1;
+  position: relative;
+  transition: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  #fakebox {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .78);
+  }
+}
+
+.non-google-page #fakebox-container {
+  display: none;
+}
+
+#fakebox > input {
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  margin-left: 7%;
+  margin-top: 0.4%;
+  opacity: 1;
+  padding-inline-start: 10px;
+  position: absolute;
+  top: 0;
+  width: 86%;
+  height:90%;
+  border:none;
+}
+
+html[dir=rtl] #fakebox > input {
+  right: 0;
+}
+
+#fakebox-search-icon {
+  -webkit-mask-image:
+      url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzVGNjM2OCI+PHBhdGggZD0iTTE1LjUgMTRoLS43OWwtLjI4LS4yN0E2LjQ3MSA2LjQ3MSAwIDAgMCAxNiA5LjUgNi41IDYuNSAwIDEgMCA5LjUgMTZjMS42MSAwIDMuMDktLjU5IDQuMjMtMS41N2wuMjcuMjh2Ljc5bDUgNC45OUwyMC40OSAxOWwtNC45OS01em0tNiAwQzcuMDEgMTQgNSAxMS45OSA1IDkuNVM3LjAxIDUgOS41IDUgMTQgNy4wMSAxNCA5LjUgMTEuOTkgMTQgOS41IDE0eiIvPjwvc3ZnPg==);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  background: 24px 24px rgb(117, 117, 117);
+  bottom: 0;
+  height: 24px;
+  left: 0;
+  margin: auto 0;
+  margin-inline-start: 16px;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+html[dir=rtl] #fakebox-search-icon {
+  right: 0;
+}
+
+#fakebox-text {
+  bottom: 0;
+  color: rgb(117, 117, 117);
+  font-size: 16px;
+  height: 44px;
+  left: 0;
+  line-height: 44px;
+  margin: auto 0;
+  overflow: hidden;
+  padding-inline-start: 48px;
+  position: absolute;
+  right: 44px;
+  text-align: initial;
+  text-overflow: ellipsis;
+  top: 0;
+  vertical-align: middle;
+  visibility: inherit;
+  white-space: nowrap;
+}
+
+html[dir=rtl] #fakebox-text {
+  left: 44px;
+  right: 0;
+}
+
+#fakebox-cursor {
+  background: #333;
+  /* Total 16px height: (46px fakebox height - 2px border) - 14px top - 14px
+   * bottom */
+  bottom: 14px;
+  left: 48px;
+  position: absolute;
+  top: 14px;
+  visibility: hidden;
+  width: 1px;
+}
+
+html[dir=rtl] #fakebox-cursor {
+  left: auto;
+  right: 48px;
+}
+
+.btn1 {
+  margin-left: 45%;
+  margin-top: 8px;
+  align-items: center;
+  width: 6%;
+  background: #333;
+  position: relative;
+  color: white;
+  width: 150px;
+  height: 50px;
+  transition: all 0.3s;
+  span {
+    transition: all 0.3s;
+    tranform: scale(1, 1);
+  }
+}
+
+.btn1::before, .btn1::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.btn-one::before {
+  left: 4px;
+  z-index: 1;
+  
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.1, 1);
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-one:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+
+.logo
+{
+  width: 30%;
+  height: 30%;
+  margin-left: 35%;
+}
+</style>
+<body>
+<div class = "center">  
+<img src="{% static 'logo1.png' %}" alt="Italian Trulli" class = "logo">
+  <form action = "/results/" method = "post">
+  <div id="fakebox-container">
+        <div id="fakebox">
+          <div id="fakebox-search-icon"></div>
+          <div id="fakebox-text">Search Artists,Songs,Albums</div>
+          {% csrf_token %}
+          <input name="param" autocomplete="off" tabindex="-1" type="text" aria-hidden="true" placeholder="Search Songs">
+          <div id="fakebox-cursor"></div>
+        </div>
+  </div>
+  <br>
+  <div id="fakebox-container">
+        <div id="fakebox">
+          <div id="fakebox-search-icon"></div>
+          <div id="fakebox-text">Search Artists,Songs,Albums</div>
+          {% csrf_token %}
+          <input name="param1" autocomplete="off" tabindex="-1" type="text" aria-hidden="true" placeholder="Search Artist">
+          <div id="fakebox-cursor"></div>
+        </div>
+  </div>
+  <br>
+  <button type="submit" class="btn1 btn-one">Search</button>
+  </form>
+</div>
+</body>
+</html>

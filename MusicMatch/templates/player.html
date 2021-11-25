@@ -1,0 +1,38 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html class="bg">
+<head>
+<link rel="icon" href="https://img.icons8.com/officel/80/000000/musical.png" type="image/png" >
+<title>Video Player</title>
+<style>
+
+.bg{
+  background-image: url("{% static 'back1.jpg' %}");
+}
+
+.center { 
+  height: 600px;
+  position: relative;
+  border: 8px solid green; 
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+    <iframe width="1200" height="600" src="{{data1}}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+</div>
+
+
+</body>
+</html>
